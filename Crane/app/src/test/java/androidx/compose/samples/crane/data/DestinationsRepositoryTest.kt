@@ -5,18 +5,29 @@ import org.amshove.kluent.shouldNotBe
 import org.junit.Test
 import org.mockito.kotlin.doReturn
 import org.mockito.kotlin.mock
+import java.util.UUID
 
 internal class DestinationsRepositoryTest {
 
     val madrid = ExploreModel(
-        city = MADRID,
-        description = "Nonstop - 2h 12m+",
+        city = City(
+            name = UUID.randomUUID().toString(),
+            country = "",
+            latitude = "",
+            longitude = "",
+        ),
+        description = "",
         imageUrl = "",
     )
 
     val khumbuvalley = ExploreModel(
-        city = KHUMBUVALLEY,
-        description = "Nonstop - 5h 16m+",
+        city = City(
+            name = UUID.randomUUID().toString(),
+            country = "",
+            latitude = "",
+            longitude = "",
+        ),
+        description = "",
         imageUrl = "",
     )
 
@@ -36,7 +47,7 @@ internal class DestinationsRepositoryTest {
     @Test
     fun getDestination() {
         val destination = tested.getDestination(
-            cityName = MADRID.name,
+            cityName = madrid.city.name,
         )
 
         destination shouldBe madrid
