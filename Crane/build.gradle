@@ -20,14 +20,14 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:8.0.1"
+        classpath "com.android.tools.build:gradle:8.0.2"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.20"
         classpath "com.google.dagger:hilt-android-gradle-plugin:2.46"
     }
 }
 
 plugins {
-    id 'com.diffplug.spotless' version '6.18.0'
+    id 'com.diffplug.spotless' version '6.20.0'
 }
 
 subprojects {
@@ -42,14 +42,13 @@ subprojects {
             target '**/*.kt'
             targetExclude("$buildDir/**/*.kt")
             targetExclude('bin/**/*.kt')
-            ktlint("0.45.2")
-            licenseHeaderFile rootProject.file('spotless/copyright.kt')
+            ktlint("0.50.0")
         }
     }
 
     tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
         kotlinOptions {
-            jvmTarget = "1.8"
+            jvmTarget = "11"
 
             // Use experimental APIs
             freeCompilerArgs += '-opt-in=kotlin.RequiresOptIn'
