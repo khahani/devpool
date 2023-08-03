@@ -27,7 +27,7 @@ buildscript {
 }
 
 plugins {
-    id 'com.diffplug.spotless' version '6.18.0'
+    id 'com.diffplug.spotless' version '6.20.0'
 }
 
 subprojects {
@@ -42,8 +42,7 @@ subprojects {
             target '**/*.kt'
             targetExclude("$buildDir/**/*.kt")
             targetExclude('bin/**/*.kt')
-            ktlint("0.45.2")
-            licenseHeaderFile rootProject.file('spotless/copyright.kt')
+            ktlint("0.50.0")
         }
     }
 
