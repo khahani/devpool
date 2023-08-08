@@ -21,6 +21,15 @@ fun <T, U, V> higherCompose2() =
         }
     }
 
+fun <T, U, V> higherAndThen() =
+    { f: (T) -> U ->
+        { g: (U) -> V ->
+            { x: T ->
+                g(f(x))
+            }
+        }
+    }
+
 fun main() {
     println(higherCompose1<Int, Int, Int>()(square1)(triple1)(2))
     println(higherCompose2<Int, Int, Int>()(square1)(triple1)(2))
