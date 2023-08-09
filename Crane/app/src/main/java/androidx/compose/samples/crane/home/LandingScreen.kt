@@ -32,7 +32,6 @@ fun LandingScreen(
             .semantics { contentDescription = "LandingScreen" },
         contentAlignment = Alignment.Center,
     ) {
-
         val currentOnTimeout by rememberUpdatedState(newValue = onTimeout)
 
         LaunchedEffect(key1 = Unit) {
@@ -59,6 +58,3 @@ fun LandingScreenPreview(
         }
     }
 }
-
-
-
