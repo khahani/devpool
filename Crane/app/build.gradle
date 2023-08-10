@@ -29,7 +29,7 @@ if (rootProject.file("local.properties").exists()) {
 }
 
 android {
-    compileSdkVersion 33
+    compileSdk 33
     namespace "androidx.compose.samples.crane"
     defaultConfig {
         applicationId "androidx.compose.samples.crane"
@@ -38,7 +38,7 @@ android {
         versionCode 1
         versionName "1.0"
         vectorDrawables.useSupportLibrary = true
-        testInstrumentationRunner "androidx.compose.samples.crane.CustomTestRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         manifestPlaceholders = [MAPS_API_KEY: properties.getProperty("MAPS_API_KEY", "")]
     }
