@@ -21,7 +21,7 @@ class LandingScreenTest {
         }
 
         composeTestRule
-            .onNodeWithContentDescription("LandingScreen")
+            .onNodeWithContentDescription(LANDING_SCREEN)
             .assertIsDisplayed()
     }
 }
