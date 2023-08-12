@@ -54,58 +54,74 @@ fun CraneDrawer() {
     ModalNavigationDrawer(
         drawerState = drawerState,
         drawerContent = {
-            ModalDrawerSheet {
-                screens.forEach { item ->
-                    NavigationDrawerItem(
-                        label = { Text(text = item) },
-                        selected = item == selectedItem.value,
-                        onClick = {
-                            scope.launch {
-                                drawerState.close()
-                            }
-                            selectedItem.value = item
-                        },
-                        modifier = Modifier
-                            .padding(
-                                paddingValues = NavigationDrawerItemDefaults.ItemPadding,
-                            ),
-                    )
+            CraneDrawerContent(
+                selectedItem = selectedItem.value,
+            ) { item ->
+                scope.launch {
+                    drawerState.close()
                 }
-            }
-        },
-        content = {
-            Scaffold(
-                topBar = {
-                    Surface(
-                        color = MaterialTheme.colorScheme.primary,
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .height(48.dp),
-                    ) {
-                        Row(
-                            modifier = Modifier
-                                .fillMaxSize(),
-                            verticalAlignment = Alignment.CenterVertically,
-                        ) {
-                            Image(
-                                painter = painterResource(id = R.drawable.ic_menu),
-                                contentDescription = stringResource(id = R.string.cd_drawer),
-                                modifier = Modifier.clickable {
-                                    scope.launch {
-                                        drawerState.open()
-                                    }
-                                },
-                            )
-                        }
-                    }
-                },
-            ) {
-                it
+                selectedItem.value = item
             }
         },
         modifier = Modifier
             .semantics { contentDescription = CRANE_DRAWER },
-    )
+    ) {
+        Scaffold(
+            topBar = {
+                CraneTopBar {
+                    scope.launch {
+                        drawerState.open()
+                    }
+                }
+            },
+        ) {
+            it
+        }
+    }
+}
+
+@Composable
+private fun CraneDrawerContent(
+    selectedItem: String,
+    onItemClicked: (selectedItem: String) -> Unit,
+) {
+    ModalDrawerSheet {
+        screens.forEach { item ->
+            NavigationDrawerItem(
+                label = { Text(text = item) },
+                selected = item == selectedItem,
+                onClick = { onItemClicked(item) },
+                modifier = Modifier
+                    .padding(
+                        paddingValues = NavigationDrawerItemDefaults.ItemPadding,
+                    ),
+            )
+        }
+    }
+}
+
+@Composable
+private fun CraneTopBar(
+    openDrawerClicked: () -> Unit,
+) {
+    Surface(
+        color = MaterialTheme.colorScheme.primary,
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(48.dp),
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxSize(),
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            Image(
+                painter = painterResource(id = R.drawable.ic_menu),
+                contentDescription = stringResource(id = R.string.cd_drawer),
+                modifier = Modifier.clickable { openDrawerClicked() },
+            )
+        }
+    }
 }
 
 @Preview
