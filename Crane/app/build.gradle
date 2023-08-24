@@ -20,6 +20,7 @@ plugins {
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
     id 'org.jetbrains.kotlin.android'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 }
 
 // Reads the Google maps key that is used in the AndroidManifest
@@ -60,6 +61,7 @@ android {
 
         release {
             minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -94,12 +96,22 @@ android {
         excludes += "/META-INF/AL2.0"
         excludes += "/META-INF/LGPL2.1"
     }
+
+    secrets {
+        // A properties file containing default secret values.
+        // This file can be checked in version control.
+        defaultPropertiesFileName = 'secrets.defaults.properties'
+
+        // Configure which keys should be ignored by the plugin by providing regular expressions.
+        // "sdk.dir" is ignored by default.
+        ignoreList.add("sdk.*")       // Ignore all keys matching the regexp "sdk.*"
+    }
 }
 
 dependencies {
     //noinspection GradleDependency
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.20"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3"
     implementation "com.google.android.libraries.maps:maps:3.1.0-beta"
     implementation "com.google.maps.android:maps-v3-ktx:3.4.0"
     constraints {
@@ -141,11 +153,12 @@ dependencies {
     androidTestImplementation "androidx.test:rules:1.5.0"
     androidTestImplementation "androidx.test.espresso:espresso-core:3.5.1"
     androidTestImplementation "androidx.test.ext:junit-ktx:1.1.5"
-    androidTestImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.1"
+    androidTestImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3"
     androidTestImplementation "com.google.dagger:hilt-android:2.46"
     androidTestImplementation "com.google.dagger:hilt-android-testing:2.46"
     kaptAndroidTest "com.google.dagger:hilt-compiler:2.46"
 
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3"
     testImplementation "junit:junit:4.13.2"
     testImplementation "androidx.test:core:1.5.0"
     testImplementation "org.mockito:mockito-core:5.3.1"
