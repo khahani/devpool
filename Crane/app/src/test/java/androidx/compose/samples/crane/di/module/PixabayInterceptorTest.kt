@@ -31,9 +31,8 @@ internal class PixabayInterceptorTest {
 
     @Test
     fun given_request_when_it_arrive_then_response_intercepted() = runTest {
-
         mockWebServer.enqueue(
-            MockResponse().setBody(testJson).setResponseCode(200)
+            MockResponse().setBody(testJson).setResponseCode(200),
         )
 
         val checkNetworkConfig = testService.checkNetworkConfig()
