@@ -14,7 +14,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
 
-    private const val BASE_URL = "https://pixabay.com/api/"
+    const val BASE_URL = "https://pixabay.com/api"
 
     @Provides
     fun provideGson() = Gson()
