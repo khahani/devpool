@@ -11,6 +11,75 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
     }
+    versionCatalogs {
+        libs {
+            version('lifecycle', '2.6.1')
+            version('dagger', '2.46')
+            version('retrofit', '2.9.0')
+            library('kotlin.stdlib', 'org.jetbrains.kotlin', 'kotlin-stdlib-jdk8').version('1.8.20')
+            library('kotlinx.coroutines.android', 'org.jetbrains.kotlinx', 'kotlinx-coroutines-android').version('1.7.3')
+            library('androidx.activity.compose', 'androidx.activity', 'activity-compose').version('1.7.2')
+            library('androidx.appcompat', 'androidx.appcompat', 'appcompat').version('1.6.1')
+            library('androidx.lifecycle.viewmodel.compose', 'androidx.lifecycle', 'lifecycle-viewmodel-compose').versionRef('lifecycle')
+            library('androidx.lifecycle.viewmodel.ktx', 'androidx.lifecycle', 'lifecycle-viewmodel-ktx').versionRef('lifecycle')
+            library('androidx.lifecycle.runtime.compose', 'androidx.lifecycle', 'lifecycle-runtime-compose').versionRef('lifecycle')
+            library('dagger.hilt.android', 'com.google.dagger', 'hilt-android').versionRef('dagger')
+            library('coil.compose', 'io.coil-kt', 'coil-compose').version('2.3.0')
+            library('retrofit2.retrofit', 'com.squareup.retrofit2', 'retrofit').versionRef('retrofit')
+            library('retrofit2.converter.gson','com.squareup.retrofit2','converter-gson').versionRef('retrofit')
+            library('gson', 'com.google.code.gson', 'gson').version('2.10.1')
+//          compiler libraries and bundles
+            library('dagger.hilt.compiler', 'com.google.dagger', 'hilt-compiler').versionRef('dagger')
+            bundle('kaptAndroidTest', [
+                    'dagger.hilt.compiler',
+            ])
+            bundle('kapt', [
+                    'dagger.hilt.compiler',
+            ])
+
+//          test libraries and bundles
+            library('kotlinx.coroutines.test', 'org.jetbrains.kotlinx', 'kotlinx-coroutines-test').version('1.7.3')
+            library('junit', 'junit', 'junit').version('4.13.2')
+            library('androidx.test.core', 'androidx.test', 'core').version('1.5.0')
+            library('androidx.test.runner', 'androidx.test', 'runner').version('1.5.2')
+            library('androidx.test.rules', 'androidx.test', 'rules').version('1.5.0')
+            library('androidx.espresso.core', 'androidx.test.espresso', 'espresso-core').version('3.5.1')
+            library('androidx.junit.ktx', 'androidx.test.ext', 'junit-ktx').version('1.1.5')
+            library('mockito', 'org.mockito', 'mockito-core').version('5.3.1')
+            library('mockito.kotlin', 'org.mockito.kotlin', 'mockito-kotlin').version('5.0.0')
+            library('mockk', 'io.mockk', 'mockk').version('1.4.1')
+            library('kluent', 'org.amshove.kluent', 'kluent-android').version('1.73')
+            library('okhttp3.mockwebserver', 'com.squareup.okhttp3', 'mockwebserver').version('4.11.0')
+            library('dagger.android.testing', 'com.google.dagger', 'hilt-android-testing').version('2.46')
+
+            bundle('testImpl', [
+                    'kotlinx.coroutines.test',
+                    'junit',
+                    'androidx.test.core',
+                    'mockito',
+                    'mockito.kotlin',
+                    'mockk',
+                    'kluent',
+                    'okhttp3.mockwebserver',
+            ])
+
+            bundle('androidTestImpl', [
+                    'kotlinx.coroutines.test',
+                    'junit',
+                    'androidx.test.core',
+                    'androidx.test.runner',
+                    'androidx.test.rules',
+                    'androidx.espresso.core',
+                    'androidx.junit.ktx',
+                    'dagger.hilt.android',
+                    'dagger.android.testing',
+            ])
+
+
+        }
+    }
 }
 rootProject.name = "Crane"
 include ':app'
+include ':core:network'
+include ':core:model'
