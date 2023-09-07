@@ -19,14 +19,16 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: gradle
-
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
         working-directory: ./Crane
       - name: Create secrets
         env:
           API_KEY_PIXABAY: ${{ secrets.API_KEY_PIXABAY }}
-        run: echo API_KEY_PIXABAY=\"$API_KEY_PIXABAY\" > ./local.properties
+          API_KEY_FOURSQUARE: ${{ secrets.API_KEY_FOURSQUARE }}
+        run: |
+          echo API_KEY_PIXABAY=\"$API_KEY_PIXABAY\" > ./local.properties
+          echo API_KEY_FOURSQUARE=\"$API_KEY_FOURSQUARE\" > ./local.properties
       - name: Build with Gradle
         run: ./gradlew build
         working-directory: ./Crane
