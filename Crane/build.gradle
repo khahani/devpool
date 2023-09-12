@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 /*
  * Copyright 2020 The Android Open Source Project
  *
@@ -47,9 +49,9 @@ subprojects {
         }
     }
 
-    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+    tasks.withType(KotlinCompile).configureEach {
         kotlinOptions {
-            jvmTarget = "11"
+            jvmTarget = JavaVersion.VERSION_17
 
             // Use experimental APIs
             freeCompilerArgs += '-opt-in=kotlin.RequiresOptIn'

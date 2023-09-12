@@ -16,6 +16,7 @@ dependencyResolutionManagement {
             version('lifecycle', '2.6.1')
             version('dagger', '2.46')
             version('retrofit', '2.9.0')
+            version('okhttp3', '4.11.0')
             library('kotlin.stdlib', 'org.jetbrains.kotlin', 'kotlin-stdlib-jdk8').version('1.8.20')
             library('kotlinx.coroutines.android', 'org.jetbrains.kotlinx', 'kotlinx-coroutines-android').version('1.7.3')
             library('androidx.activity.compose', 'androidx.activity', 'activity-compose').version('1.7.2')
@@ -23,11 +24,15 @@ dependencyResolutionManagement {
             library('androidx.lifecycle.viewmodel.compose', 'androidx.lifecycle', 'lifecycle-viewmodel-compose').versionRef('lifecycle')
             library('androidx.lifecycle.viewmodel.ktx', 'androidx.lifecycle', 'lifecycle-viewmodel-ktx').versionRef('lifecycle')
             library('androidx.lifecycle.runtime.compose', 'androidx.lifecycle', 'lifecycle-runtime-compose').versionRef('lifecycle')
+            library('androidx.core.ktx', 'androidx.core', 'core-ktx').version('1.9.0')
             library('dagger.hilt.android', 'com.google.dagger', 'hilt-android').versionRef('dagger')
             library('coil.compose', 'io.coil-kt', 'coil-compose').version('2.3.0')
             library('retrofit2.retrofit', 'com.squareup.retrofit2', 'retrofit').versionRef('retrofit')
-            library('retrofit2.converter.gson','com.squareup.retrofit2','converter-gson').versionRef('retrofit')
+            library('retrofit2.converter.gson', 'com.squareup.retrofit2', 'converter-gson').versionRef('retrofit')
+            library('okhttp3.okhttp','com.squareup.okhttp3','okhttp').versionRef('okhttp3')
+            library('okhttp3.loggingInterceptor','com.squareup.okhttp3','logging-interceptor').versionRef('okhttp3')
             library('gson', 'com.google.code.gson', 'gson').version('2.10.1')
+            library('kotlinx.serialization.json','org.jetbrains.kotlinx','kotlinx-serialization-json-jvm').version('1.5.1')
 //          compiler libraries and bundles
             library('dagger.hilt.compiler', 'com.google.dagger', 'hilt-compiler').versionRef('dagger')
             bundle('kaptAndroidTest', [
@@ -49,7 +54,7 @@ dependencyResolutionManagement {
             library('mockito.kotlin', 'org.mockito.kotlin', 'mockito-kotlin').version('5.0.0')
             library('mockk', 'io.mockk', 'mockk').version('1.4.1')
             library('kluent', 'org.amshove.kluent', 'kluent-android').version('1.73')
-            library('okhttp3.mockwebserver', 'com.squareup.okhttp3', 'mockwebserver').version('4.11.0')
+            library('okhttp3.mockwebserver', 'com.squareup.okhttp3', 'mockwebserver').versionRef('okhttp3')
             library('dagger.android.testing', 'com.google.dagger', 'hilt-android-testing').version('2.46')
 
             bundle('testImpl', [
@@ -82,4 +87,3 @@ dependencyResolutionManagement {
 rootProject.name = "Crane"
 include ':app'
 include ':core:network'
-include ':core:model'

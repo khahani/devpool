@@ -1,0 +1,37 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    compileSdk = 33
+    namespace 'androidx.compose.samples.core.network'
+    buildFeatures {
+        buildConfig = true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.appcompat
+    implementation libs.dagger.hilt.android
+    implementation libs.kotlinx.serialization.json
+    implementation libs.okhttp3.okhttp
+    implementation libs.okhttp3.loggingInterceptor
+
+    kapt libs.bundles.kapt
+    kaptAndroidTest libs.bundles.kaptAndroidTest
+    androidTestImplementation libs.bundles.androidTestImpl
+    testImplementation libs.bundles.testImpl
+}
