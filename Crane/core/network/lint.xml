@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lint>
+    <!--
+    Lint crashes when it tries to analyse a file without a package name:
+    java.lang.IllegalStateException: () -> kotlin.String at org.jetbrains.kotlin.asJava.classes.KtLightClassForFacadeImpl$Companion.createForFacadeNoCache
+    -->
+    <issue id="LintError">
+        <ignore path="**/JvmUnitTestFakeAssetManager.kt" />
+    </issue>
+</lint>
