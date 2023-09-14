@@ -87,3 +87,4 @@ dependencyResolutionManagement {
 rootProject.name = "Crane"
 include ':app'
 include ':core:network'
+include ':core:common'
