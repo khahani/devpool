@@ -29,10 +29,10 @@ dependencyResolutionManagement {
             library('coil.compose', 'io.coil-kt', 'coil-compose').version('2.3.0')
             library('retrofit2.retrofit', 'com.squareup.retrofit2', 'retrofit').versionRef('retrofit')
             library('retrofit2.converter.gson', 'com.squareup.retrofit2', 'converter-gson').versionRef('retrofit')
-            library('okhttp3.okhttp','com.squareup.okhttp3','okhttp').versionRef('okhttp3')
-            library('okhttp3.loggingInterceptor','com.squareup.okhttp3','logging-interceptor').versionRef('okhttp3')
+            library('okhttp3.okhttp', 'com.squareup.okhttp3', 'okhttp').versionRef('okhttp3')
+            library('okhttp3.loggingInterceptor', 'com.squareup.okhttp3', 'logging-interceptor').versionRef('okhttp3')
             library('gson', 'com.google.code.gson', 'gson').version('2.10.1')
-            library('kotlinx.serialization.json','org.jetbrains.kotlinx','kotlinx-serialization-json-jvm').version('1.5.1')
+            library('kotlinx.serialization.json', 'org.jetbrains.kotlinx', 'kotlinx-serialization-json-jvm').version('1.5.1')
 //          compiler libraries and bundles
             library('dagger.hilt.compiler', 'com.google.dagger', 'hilt-compiler').versionRef('dagger')
             bundle('kaptAndroidTest', [
@@ -56,6 +56,7 @@ dependencyResolutionManagement {
             library('kluent', 'org.amshove.kluent', 'kluent-android').version('1.73')
             library('okhttp3.mockwebserver', 'com.squareup.okhttp3', 'mockwebserver').versionRef('okhttp3')
             library('dagger.android.testing', 'com.google.dagger', 'hilt-android-testing').version('2.46')
+            library('turbine', 'app.cash.turbine', 'turbine').version('1.0.0')
 
             bundle('testImpl', [
                     'kotlinx.coroutines.test',
@@ -66,6 +67,7 @@ dependencyResolutionManagement {
                     'mockk',
                     'kluent',
                     'okhttp3.mockwebserver',
+                    'turbine',
             ])
 
             bundle('androidTestImpl', [
