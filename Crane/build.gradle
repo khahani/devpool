@@ -51,6 +51,7 @@ subprojects {
 
     tasks.withType(KotlinCompile).configureEach {
         kotlinOptions {
+            languageVersion = "1.9"
             jvmTarget = JavaVersion.VERSION_17
 
             // Use experimental APIs

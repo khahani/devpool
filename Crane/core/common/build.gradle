@@ -6,13 +6,10 @@ plugins {
 }
 
 android {
-    compileSdk = 33
-    namespace 'androidx.compose.samples.core.network'
+    compileSdk 33
+    namespace 'androidx.compose.samples.common'
     defaultConfig {
-        minSdkVersion 21
-    }
-    buildFeatures {
-        buildConfig = true
+        minSdkVersion 24
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
@@ -21,24 +18,13 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_17
     }
-    testOptions {
-        unitTests {
-            includeAndroidResources true
-        }
-    }
 }
 
 dependencies {
 
     implementation libs.androidx.core.ktx
-    implementation libs.androidx.appcompat
     implementation libs.dagger.hilt.android
-    implementation libs.kotlinx.serialization.json
-    implementation libs.okhttp3.okhttp
-    implementation libs.okhttp3.loggingInterceptor
 
     kapt libs.bundles.kapt
-    kaptAndroidTest libs.bundles.kaptAndroidTest
-    androidTestImplementation libs.bundles.androidTestImpl
     testImplementation libs.bundles.testImpl
 }
