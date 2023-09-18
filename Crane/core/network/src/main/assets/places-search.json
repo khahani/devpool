@@ -1,0 +1,266 @@
+{
+  "results": [
+    {
+      "fsq_id": "52f18036498e071bbb86adf8",
+      "categories": [
+        {
+          "id": 13036,
+          "name": "Tea Room",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/tearoom_",
+            "suffix": ".png"
+          }
+        }
+      ],
+      "chains": [],
+      "distance": 632,
+      "geocodes": {
+        "main": {
+          "latitude": 47.610884,
+          "longitude": -122.344864
+        },
+        "roof": {
+          "latitude": 47.610884,
+          "longitude": -122.344864
+        }
+      },
+      "link": "/v3/places/52f18036498e071bbb86adf8",
+      "location": {
+        "address": "2003 Western Ave",
+        "address_extended": "Ste 109",
+        "census_block": "530330081011005",
+        "country": "US",
+        "cross_street": "",
+        "dma": "Seattle-Tacoma",
+        "formatted_address": "2003 Western Ave, Seattle, WA 98121",
+        "locality": "Seattle",
+        "neighborhood": [
+          "Belltown"
+        ],
+        "postcode": "98121",
+        "region": "WA"
+      },
+      "name": "Vital T Leaf",
+      "related_places": {},
+      "timezone": "America/Los_Angeles"
+    },
+    {
+      "fsq_id": "4abd05d0f964a5201c8820e3",
+      "categories": [
+        {
+          "id": 17069,
+          "name": "Grocery Store / Supermarket",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/shops/food_grocery_",
+            "suffix": ".png"
+          }
+        }
+      ],
+      "chains": [],
+      "distance": 653,
+      "geocodes": {
+        "main": {
+          "latitude": 47.608426,
+          "longitude": -122.341495
+        },
+        "roof": {
+          "latitude": 47.608426,
+          "longitude": -122.341495
+        }
+      },
+      "link": "/v3/places/4abd05d0f964a5201c8820e3",
+      "location": {
+        "address": "1509 Western Ave",
+        "census_block": "530330081011005",
+        "country": "US",
+        "cross_street": "",
+        "dma": "Seattle-Tacoma",
+        "formatted_address": "1509 Western Ave, Seattle, WA 98101",
+        "locality": "Seattle",
+        "neighborhood": [
+          "Downtown"
+        ],
+        "postcode": "98101",
+        "region": "WA"
+      },
+      "name": "World Spice Merchants",
+      "related_places": {},
+      "timezone": "America/Los_Angeles"
+    },
+    {
+      "fsq_id": "440daad8f964a52096301fe3",
+      "categories": [
+        {
+          "id": 13035,
+          "name": "Coffee Shop",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/coffeeshop_",
+            "suffix": ".png"
+          }
+        }
+      ],
+      "chains": [
+        {
+          "id": "ab4c54c0-d68a-012e-5619-003048cad9da",
+          "name": "Starbucks"
+        }
+      ],
+      "distance": 671,
+      "geocodes": {
+        "main": {
+          "latitude": 47.610031,
+          "longitude": -122.342568
+        },
+        "roof": {
+          "latitude": 47.610031,
+          "longitude": -122.342568
+        }
+      },
+      "link": "/v3/places/440daad8f964a52096301fe3",
+      "location": {
+        "address": "1912 Pike Pl",
+        "census_block": "530330080021004",
+        "country": "US",
+        "cross_street": "",
+        "dma": "Seattle-Tacoma",
+        "formatted_address": "1912 Pike Pl, Seattle, WA 98101",
+        "locality": "Seattle",
+        "neighborhood": [
+          "Belltown"
+        ],
+        "postcode": "98101",
+        "region": "WA"
+      },
+      "name": "Starbucks",
+      "related_places": {
+        "parent": {
+          "fsq_id": "427ea800f964a520b1211fe3",
+          "name": "Pike Place Market"
+        }
+      },
+      "timezone": "America/Los_Angeles"
+    },
+    {
+      "fsq_id": "58f62b775c6838615913c712",
+      "categories": [
+        {
+          "id": 13003,
+          "name": "Bar",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/nightlife/pub_",
+            "suffix": ".png"
+          }
+        },
+        {
+          "id": 13035,
+          "name": "Coffee Shop",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/coffeeshop_",
+            "suffix": ".png"
+          }
+        }
+      ],
+      "chains": [],
+      "distance": 684,
+      "geocodes": {
+        "main": {
+          "latitude": 47.611593,
+          "longitude": -122.345793
+        },
+        "roof": {
+          "latitude": 47.611593,
+          "longitude": -122.345793
+        }
+      },
+      "link": "/v3/places/58f62b775c6838615913c712",
+      "location": {
+        "address": "2125 Western Ave",
+        "address_extended": "Ste 100",
+        "census_block": "530330080022007",
+        "country": "US",
+        "cross_street": "Lenora",
+        "dma": "Seattle-Tacoma",
+        "formatted_address": "2125 Western Ave (Lenora), Seattle, WA 98121",
+        "locality": "Seattle",
+        "neighborhood": [
+          "Belltown"
+        ],
+        "postcode": "98121",
+        "region": "WA"
+      },
+      "name": "Cedar & Spokes Coffee & Bar",
+      "related_places": {},
+      "timezone": "America/Los_Angeles"
+    },
+    {
+      "fsq_id": "5c8bc600cd441c002c256991",
+      "categories": [
+        {
+          "id": 13002,
+          "name": "Bakery",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/bakery_",
+            "suffix": ".png"
+          }
+        },
+        {
+          "id": 13034,
+          "name": "Café",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/cafe_",
+            "suffix": ".png"
+          }
+        },
+        {
+          "id": 13035,
+          "name": "Coffee Shop",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/coffeeshop_",
+            "suffix": ".png"
+          }
+        }
+      ],
+      "chains": [],
+      "distance": 697,
+      "geocodes": {
+        "main": {
+          "latitude": 47.608124,
+          "longitude": -122.340595
+        },
+        "roof": {
+          "latitude": 47.608124,
+          "longitude": -122.340595
+        }
+      },
+      "link": "/v3/places/5c8bc600cd441c002c256991",
+      "location": {
+        "address": "1426 Western Ave",
+        "census_block": "530330081011002",
+        "country": "US",
+        "cross_street": "",
+        "dma": "Seattle-Tacoma",
+        "formatted_address": "1426 Western Ave, Seattle, WA 98101",
+        "locality": "Seattle",
+        "neighborhood": [
+          "Downtown"
+        ],
+        "postcode": "98101",
+        "region": "WA"
+      },
+      "name": "The Barque Brontes",
+      "related_places": {},
+      "timezone": "America/Los_Angeles"
+    }
+  ],
+  "context": {
+    "geo_bounds": {
+      "circle": {
+        "center": {
+          "latitude": 47.606,
+          "longitude": -122.349358
+        },
+        "radius": 832
+      }
+    }
+  }
+}
