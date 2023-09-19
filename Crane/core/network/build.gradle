@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
     id 'kotlinx-serialization'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 }
 
 android {
@@ -29,6 +30,10 @@ android {
     }
 }
 
+secrets {
+    defaultPropertiesFileName = 'secrets.defaults.properties'
+}
+
 dependencies {
 
     implementation libs.androidx.core.ktx
@@ -37,6 +42,7 @@ dependencies {
     implementation libs.kotlinx.serialization.json
     implementation libs.okhttp3.okhttp
     implementation libs.okhttp3.loggingInterceptor
+    implementation libs.retrofit2.retrofit
 
     kapt libs.bundles.kapt
     kaptAndroidTest libs.bundles.kaptAndroidTest
