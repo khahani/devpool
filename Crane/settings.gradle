@@ -14,7 +14,7 @@ dependencyResolutionManagement {
     versionCatalogs {
         libs {
             version('lifecycle', '2.6.1')
-            version('dagger', '2.46')
+            version('dagger', '2.47')
             version('okhttp3', '4.11.0')
             library('kotlin.stdlib', 'org.jetbrains.kotlin', 'kotlin-stdlib-jdk8').version('1.8.20')
             library('kotlinx.coroutines.android', 'org.jetbrains.kotlinx', 'kotlinx-coroutines-android').version('1.7.3')
@@ -66,6 +66,7 @@ dependencyResolutionManagement {
                     'kluent',
                     'okhttp3.mockwebserver',
                     'turbine',
+                    'kotlinx.serialization.json',
             ])
 
             bundle('androidTestImpl', [
