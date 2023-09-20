@@ -6,19 +6,30 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class NetworkPlacesSearch(
     val results: List<NetworkResults>? = null,
-    val context: NetworkGeoBounds? = null,
+    val context: NetworkContext? = null,
+)
+
+@Serializable
+data class NetworkContext(
+    @SerialName("geo_bounds")
+    val geoBounds: NetworkGeoBounds? = null,
 )
 
 @Serializable
 data class NetworkGeoBounds(
     val circle: NetworkCircle? = null,
-    val radius: Int? = null,
 )
 
 @Serializable
 data class NetworkCircle(
-    val latitude: Float? = null,
-    val longitude: Float? = null,
+    val center: NetworkCenter? = null,
+    val radius: Int? = null,
+)
+
+@Serializable
+data class NetworkCenter(
+    val latitude: Double? = null,
+    val longitude: Double? = null,
 )
 
 @Serializable

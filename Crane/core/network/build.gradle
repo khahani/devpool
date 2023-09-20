@@ -3,13 +3,15 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
+    id 'kotlinx-serialization'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 }
 
 android {
     compileSdk = 33
     namespace 'androidx.compose.samples.core.network'
     defaultConfig {
-        minSdkVersion 21
+        minSdkVersion 24
     }
     buildFeatures {
         buildConfig = true
@@ -28,14 +30,22 @@ android {
     }
 }
 
+secrets {
+    defaultPropertiesFileName = 'secrets.defaults.properties'
+}
+
 dependencies {
 
+    implementation project(':core:common')
     implementation libs.androidx.core.ktx
+    implementation libs.kotlin.stdlib
     implementation libs.androidx.appcompat
     implementation libs.dagger.hilt.android
     implementation libs.kotlinx.serialization.json
     implementation libs.okhttp3.okhttp
     implementation libs.okhttp3.loggingInterceptor
+    implementation libs.retrofit2.retrofit
+    implementation libs.retrofit2.kotlinx.serialization.converter
 
     kapt libs.bundles.kapt
     kaptAndroidTest libs.bundles.kaptAndroidTest
