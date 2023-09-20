@@ -43,6 +43,7 @@ dependencies {
     implementation libs.okhttp3.okhttp
     implementation libs.okhttp3.loggingInterceptor
     implementation libs.retrofit2.retrofit
+    implementation libs.retrofit2.kotlinx.serialization.converter
 
     kapt libs.bundles.kapt
     kaptAndroidTest libs.bundles.kaptAndroidTest

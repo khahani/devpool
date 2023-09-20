@@ -115,8 +115,6 @@ dependencies {
     implementation libs.androidx.lifecycle.viewmodel.ktx
     implementation libs.androidx.lifecycle.runtime.compose
     implementation libs.retrofit2.retrofit
-    implementation libs.gson
-    implementation libs.retrofit2.converter.gson
     implementation libs.dagger.hilt.android
     implementation libs.coil.compose
 
