@@ -6,7 +6,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:8.0.2"
+        classpath "com.android.tools.build:gradle:8.1.1"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.20"
         classpath "com.google.dagger:hilt-android-gradle-plugin:2.47"
         classpath "com.google.android.libraries.mapsplatform.secrets-gradle-plugin:secrets-gradle-plugin:2.0.1"
@@ -14,19 +14,20 @@ buildscript {
 }
 
 plugins {
-    id 'com.diffplug.spotless' version '6.20.0'
-    id 'org.jetbrains.kotlin.jvm' version '1.9.0'
-    id 'org.jetbrains.kotlin.plugin.serialization' version '1.9.0'
+    id 'com.android.application' version '8.1.0' apply false
+    id 'com.android.library' version '8.1.0' apply false
+    id 'org.jetbrains.kotlin.android' version '1.8.22' apply false
+    id 'com.diffplug.spotless' version '6.21.0' apply false
+    id 'org.jetbrains.kotlin.jvm' version '1.9.0' apply false
+    id 'org.jetbrains.kotlin.plugin.serialization' version '1.9.0' apply false
+    id "org.jetbrains.kotlin.kapt" version "1.9.0" apply false
+    id 'com.google.dagger.hilt.android' version '2.47' apply false
 }
 
 subprojects {
-    repositories {
-        google()
-        mavenCentral()
-    }
-
     apply plugin: 'com.diffplug.spotless'
     spotless {
+        lineEndings 'UNIX'
         kotlin {
             target '**/*.kt'
             targetExclude("$buildDir/**/*.kt")
@@ -36,12 +37,9 @@ subprojects {
     }
 
     tasks.withType(KotlinCompile).configureEach {
-        kotlinOptions {
-            languageVersion = "1.9"
-            jvmTarget = JavaVersion.VERSION_17
-
+        compilerOptions {
             // Use experimental APIs
-            freeCompilerArgs += '-opt-in=kotlin.RequiresOptIn'
+            freeCompilerArgs.add('-opt-in=kotlin.RequiresOptIn')
         }
     }
     // androidx.test and hilt are forcing JUnit, 4.12. This forces them to use 4.13

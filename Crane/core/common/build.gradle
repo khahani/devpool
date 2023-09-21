@@ -1,23 +1,22 @@
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
-    id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
-    id 'dagger.hilt.android.plugin'
+    id 'com.google.dagger.hilt.android'
+}
+
+kotlin {
+    jvmToolchain 17
 }
 
 android {
-    compileSdk 33
     namespace 'androidx.compose.samples.common'
+    compileSdk 33
     defaultConfig {
-        minSdkVersion 24
+        minSdk 24
     }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
-    }
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
     }
 }
 
