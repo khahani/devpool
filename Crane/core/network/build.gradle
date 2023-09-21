@@ -1,32 +1,32 @@
 plugins {
     id 'com.android.library'
-    id 'org.jetbrains.kotlin.android'
-    id 'kotlin-kapt'
-    id 'dagger.hilt.android.plugin'
+    id 'kotlin-android'
     id 'kotlinx-serialization'
     id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
+    id 'kotlin-kapt'
+    id 'com.google.dagger.hilt.android'
+}
+
+kotlin {
+    jvmToolchain 17
 }
 
 android {
-    compileSdk = 33
     namespace 'androidx.compose.samples.core.network'
+    compileSdk = 33
     defaultConfig {
-        minSdkVersion 24
+        minSdk 24
     }
     buildFeatures {
         buildConfig = true
-    }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
-    }
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17
     }
     testOptions {
         unitTests {
             includeAndroidResources true
         }
+    }
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
     }
 }
 
