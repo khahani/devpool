@@ -17,6 +17,15 @@ android {
     defaultConfig {
         minSdk 24
     }
+    flavorDimensions = ["version"]
+    productFlavors {
+        demo {
+            dimension flavorDimensions[0]
+        }
+        prod {
+            dimension flavorDimensions[0]
+        }
+    }
     buildFeatures {
         buildConfig = true
     }
