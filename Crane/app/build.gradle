@@ -45,6 +45,16 @@ android {
         }
     }
 
+    flavorDimensions = ["version"]
+    productFlavors {
+        demo {
+            dimension flavorDimensions[0]
+        }
+        prod {
+            dimension flavorDimensions[0]
+        }
+    }
+
     buildFeatures {
         compose true
 
