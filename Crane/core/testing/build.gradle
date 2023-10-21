@@ -1,0 +1,45 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'com.google.dagger.hilt.android'
+    id 'kotlin-kapt'
+}
+
+kotlin {
+    jvmToolchain 17
+}
+
+android {
+    namespace 'androidx.compose.samples.core.testing'
+    compileSdk = 33
+    defaultConfig {
+        minSdk 24
+    }
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+    kotlinOptions {
+        freeCompilerArgs += [
+                "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
+        ]
+    }
+}
+
+dependencies {
+
+    implementation project(':core:common')
+    implementation libs.androidx.core.ktx
+    implementation libs.kotlin.stdlib
+    implementation libs.dagger.hilt.android
+//    implementation libs.dagger.hilt.androidcompiler
+    implementation libs.androidx.test.runner
+    implementation libs.kotlinx.coroutines.android
+    implementation libs.androidx.test.core
+    implementation libs.dagger.android.testing
+
+    kapt libs.bundles.kapt
+    kaptTest libs.bundles.kaptTest
+    kaptAndroidTest libs.bundles.kaptAndroidTest
+    androidTestImplementation libs.bundles.androidTestImpl
+    testImplementation libs.bundles.testImpl
+}

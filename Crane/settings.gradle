@@ -33,11 +33,16 @@ dependencyResolutionManagement {
             library('retrofit2.kotlinx.serialization.converter','com.jakewharton.retrofit','retrofit2-kotlinx-serialization-converter').version('1.0.0')
 //          compiler libraries and bundles
             library('dagger.hilt.compiler', 'com.google.dagger', 'hilt-compiler').versionRef('dagger')
+            library('dagger.hilt.androidcompiler', 'com.google.dagger', 'hilt-android-compiler').versionRef('dagger')
             bundle('kaptAndroidTest', [
                     'dagger.hilt.compiler',
+                    'dagger.hilt.androidcompiler',
             ])
             bundle('kapt', [
                     'dagger.hilt.compiler',
+            ])
+            bundle('kaptTest', [
+                    'dagger.hilt.androidcompiler',
             ])
 
 //          test libraries and bundles
@@ -53,7 +58,7 @@ dependencyResolutionManagement {
             library('mockk', 'io.mockk', 'mockk').version('1.4.1')
             library('kluent', 'org.amshove.kluent', 'kluent-android').version('1.73')
             library('okhttp3.mockwebserver', 'com.squareup.okhttp3', 'mockwebserver').versionRef('okhttp3')
-            library('dagger.android.testing', 'com.google.dagger', 'hilt-android-testing').version('2.46')
+            library('dagger.android.testing', 'com.google.dagger', 'hilt-android-testing').versionRef('dagger')
             library('turbine', 'app.cash.turbine', 'turbine').version('1.0.0')
 
             bundle('testImpl', [
@@ -67,6 +72,7 @@ dependencyResolutionManagement {
                     'okhttp3.mockwebserver',
                     'turbine',
                     'kotlinx.serialization.json',
+                    'dagger.android.testing',
             ])
 
             bundle('androidTestImpl', [
@@ -89,3 +95,4 @@ rootProject.name = "Crane"
 include ':app'
 include ':core:network'
 include ':core:common'
+include ':core:testing'
