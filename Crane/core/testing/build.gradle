@@ -31,11 +31,10 @@ dependencies {
     implementation libs.androidx.core.ktx
     implementation libs.kotlin.stdlib
     implementation libs.dagger.hilt.android
-//    implementation libs.dagger.hilt.androidcompiler
-    implementation libs.androidx.test.runner
-    implementation libs.kotlinx.coroutines.android
-    implementation libs.androidx.test.core
-    implementation libs.dagger.android.testing
+    api libs.androidx.test.runner
+    api libs.kotlinx.coroutines.android
+    api libs.androidx.test.core
+    api libs.dagger.android.testing
 
     kapt libs.bundles.kapt
     kaptTest libs.bundles.kaptTest
