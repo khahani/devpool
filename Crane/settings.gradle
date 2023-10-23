@@ -36,7 +36,6 @@ dependencyResolutionManagement {
             library('dagger.hilt.androidcompiler', 'com.google.dagger', 'hilt-android-compiler').versionRef('dagger')
             bundle('kaptAndroidTest', [
                     'dagger.hilt.compiler',
-                    'dagger.hilt.androidcompiler',
             ])
             bundle('kapt', [
                     'dagger.hilt.compiler',

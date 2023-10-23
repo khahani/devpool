@@ -35,6 +35,7 @@ dependencies {
     api libs.kotlinx.coroutines.android
     api libs.androidx.test.core
     api libs.dagger.android.testing
+    api libs.kotlinx.coroutines.test
 
     kapt libs.bundles.kapt
     kaptTest libs.bundles.kaptTest
