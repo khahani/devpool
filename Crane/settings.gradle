@@ -59,6 +59,7 @@ dependencyResolutionManagement {
             library('okhttp3.mockwebserver', 'com.squareup.okhttp3', 'mockwebserver').versionRef('okhttp3')
             library('hilt.android.testing', 'com.google.dagger', 'hilt-android-testing').versionRef('hilt')
             library('turbine', 'app.cash.turbine', 'turbine').version('1.0.0')
+            library('retrofit2.mock','com.squareup.retrofit2', 'retrofit-mock').version('2.9.0')
 
             bundle('testImpl', [
                     'kotlinx.coroutines.test',
@@ -72,6 +73,8 @@ dependencyResolutionManagement {
                     'turbine',
                     'kotlinx.serialization.json',
                     'hilt.android.testing',
+                    'retrofit2.kotlinx.serialization.converter',
+                    'retrofit2.mock',
             ])
 
             bundle('androidTestImpl', [
