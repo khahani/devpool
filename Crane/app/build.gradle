@@ -93,7 +93,7 @@ dependencies {
     implementation libs.androidx.lifecycle.viewmodel.ktx
     implementation libs.androidx.lifecycle.runtime.compose
     implementation libs.retrofit2.retrofit
-    implementation libs.dagger.hilt.android
+    implementation libs.hilt.android.android
     implementation libs.coil.compose
 
     kapt libs.bundles.kapt
