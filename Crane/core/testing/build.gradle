@@ -30,11 +30,11 @@ dependencies {
     implementation project(':core:common')
     implementation libs.androidx.core.ktx
     implementation libs.kotlin.stdlib
-    implementation libs.dagger.hilt.android
+    implementation libs.hilt.android.android
     api libs.androidx.test.runner
     api libs.kotlinx.coroutines.android
     api libs.androidx.test.core
-    api libs.dagger.android.testing
+    api libs.hilt.android.testing
     api libs.kotlinx.coroutines.test
 
     kapt libs.bundles.kapt

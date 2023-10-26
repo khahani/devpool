@@ -14,7 +14,7 @@ dependencyResolutionManagement {
     versionCatalogs {
         libs {
             version('lifecycle', '2.6.1')
-            version('dagger', '2.47')
+            version('hilt', '2.48.1')
             version('okhttp3', '4.11.0')
             library('kotlin.stdlib', 'org.jetbrains.kotlin', 'kotlin-stdlib-jdk8').version('1.8.20')
             library('kotlinx.coroutines.android', 'org.jetbrains.kotlinx', 'kotlinx-coroutines-android').version('1.7.3')
@@ -24,7 +24,7 @@ dependencyResolutionManagement {
             library('androidx.lifecycle.viewmodel.ktx', 'androidx.lifecycle', 'lifecycle-viewmodel-ktx').versionRef('lifecycle')
             library('androidx.lifecycle.runtime.compose', 'androidx.lifecycle', 'lifecycle-runtime-compose').versionRef('lifecycle')
             library('androidx.core.ktx', 'androidx.core', 'core-ktx').version('1.9.0')
-            library('dagger.hilt.android', 'com.google.dagger', 'hilt-android').versionRef('dagger')
+            library('hilt.android.android', 'com.google.dagger', 'hilt-android').versionRef('hilt')
             library('coil.compose', 'io.coil-kt', 'coil-compose').version('2.3.0')
             library('retrofit2.retrofit', 'com.squareup.retrofit2', 'retrofit').version('2.9.0')
             library('okhttp3.okhttp', 'com.squareup.okhttp3', 'okhttp').versionRef('okhttp3')
@@ -32,16 +32,16 @@ dependencyResolutionManagement {
             library('kotlinx.serialization.json', 'org.jetbrains.kotlinx', 'kotlinx-serialization-json-jvm').version('1.5.1')
             library('retrofit2.kotlinx.serialization.converter','com.jakewharton.retrofit','retrofit2-kotlinx-serialization-converter').version('1.0.0')
 //          compiler libraries and bundles
-            library('dagger.hilt.compiler', 'com.google.dagger', 'hilt-compiler').versionRef('dagger')
-            library('dagger.hilt.androidcompiler', 'com.google.dagger', 'hilt-android-compiler').versionRef('dagger')
+            library('hilt.compiler', 'com.google.dagger', 'hilt-compiler').versionRef('hilt')
+            library('hilt.android.compiler', 'com.google.dagger', 'hilt-android-compiler').versionRef('hilt')
             bundle('kaptAndroidTest', [
-                    'dagger.hilt.compiler',
+                    'hilt.android.compiler',
             ])
             bundle('kapt', [
-                    'dagger.hilt.compiler',
+                    'hilt.compiler',
             ])
             bundle('kaptTest', [
-                    'dagger.hilt.androidcompiler',
+                    'hilt.android.compiler',
             ])
 
 //          test libraries and bundles
@@ -57,7 +57,7 @@ dependencyResolutionManagement {
             library('mockk', 'io.mockk', 'mockk').version('1.4.1')
             library('kluent', 'org.amshove.kluent', 'kluent-android').version('1.73')
             library('okhttp3.mockwebserver', 'com.squareup.okhttp3', 'mockwebserver').versionRef('okhttp3')
-            library('dagger.android.testing', 'com.google.dagger', 'hilt-android-testing').versionRef('dagger')
+            library('hilt.android.testing', 'com.google.dagger', 'hilt-android-testing').versionRef('hilt')
             library('turbine', 'app.cash.turbine', 'turbine').version('1.0.0')
 
             bundle('testImpl', [
@@ -71,7 +71,7 @@ dependencyResolutionManagement {
                     'okhttp3.mockwebserver',
                     'turbine',
                     'kotlinx.serialization.json',
-                    'dagger.android.testing',
+                    'hilt.android.testing',
             ])
 
             bundle('androidTestImpl', [
@@ -82,8 +82,7 @@ dependencyResolutionManagement {
                     'androidx.test.rules',
                     'androidx.espresso.core',
                     'androidx.junit.ktx',
-                    'dagger.hilt.android',
-                    'dagger.android.testing',
+                    'hilt.android.testing',
             ])
 
 

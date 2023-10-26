@@ -12,5 +12,5 @@ import dagger.hilt.components.SingletonComponent
 interface FlavoredNetworkModule {
 
     @Binds
-    fun RetrofitFsqNetwork.binds(): FsqNetworkDataSource
+    fun binds(impl: RetrofitFsqNetwork): FsqNetworkDataSource
 }
