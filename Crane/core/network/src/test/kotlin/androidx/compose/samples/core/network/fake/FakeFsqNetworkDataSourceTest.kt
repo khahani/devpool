@@ -13,7 +13,7 @@ import androidx.compose.samples.core.network.model.NetworkResults
 import kotlinx.coroutines.test.StandardTestDispatcher
 import kotlinx.coroutines.test.runTest
 import kotlinx.serialization.json.Json
-import org.amshove.kluent.shouldBeEqualTo
+import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
 
@@ -77,7 +77,7 @@ class FakeFsqNetworkDataSourceTest {
         )
 
         val response = subject.placesSearch()
-        response.context shouldBeEqualTo expected.context
-        response.results?.first() shouldBeEqualTo expected.results?.first()
+        assertEquals(response.context, expected.context)
+        assertEquals(response.results?.first(), expected.results?.first())
     }
 }
