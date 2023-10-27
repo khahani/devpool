@@ -1,7 +1,7 @@
 package androidx.compose.samples.crane.data
 
-import org.amshove.kluent.shouldBe
-import org.amshove.kluent.shouldNotBe
+import org.junit.Assert.assertNotSame
+import org.junit.Assert.assertSame
 import org.junit.Test
 import org.mockito.kotlin.doReturn
 import org.mockito.kotlin.mock
@@ -50,7 +50,7 @@ internal class DestinationsRepositoryTest {
             cityName = madrid.city.name,
         )
 
-        destination shouldBe madrid
-        destination shouldNotBe khumbuvalley
+        assertSame(destination, madrid)
+        assertNotSame(destination, khumbuvalley)
     }
 }

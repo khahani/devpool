@@ -5,7 +5,7 @@ import androidx.compose.samples.common.result.asResult
 import app.cash.turbine.test
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.test.runTest
-import org.amshove.kluent.internal.assertEquals
+import org.junit.Assert.assertEquals
 import org.junit.Test
 import kotlin.Exception
 
