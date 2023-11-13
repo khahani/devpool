@@ -11,8 +11,8 @@ import kotlinx.serialization.json.decodeFromStream
 import okhttp3.OkHttpClient
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
-import org.amshove.kluent.shouldBeEqualTo
 import org.junit.After
+import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
 
@@ -60,6 +60,6 @@ class RetrofitFsqNetworkTest {
                 ),
         )
         val response = retrofitFsqNetwork.placesSearch()
-        responseBody shouldBeEqualTo response
+        Assert.assertEquals(responseBody, response)
     }
 }
